@@ -1,0 +1,289 @@
+{
+  "fuente_datos": "yfinance",
+  "sintetico": false,
+  "autores": "Diego Valdez Hernandez - 654157; Patricio Cardoza Garcia - 629812",
+  "profesor": "Ángel Roberto Nava Solis",
+  "materia": "Finanzas computacionales",
+  "fecha_ejecucion": "2026-11-17 11:53",
+  "n_activos": 23,
+  "tickers": [
+    "AAPL",
+    "AMZN",
+    "BAC",
+    "CAT",
+    "CVX",
+    "EEM",
+    "GLD",
+    "GOOGL",
+    "GS",
+    "HD",
+    "JNJ",
+    "JPM",
+    "KO",
+    "LIN",
+    "MSFT",
+    "NEE",
+    "NVDA",
+    "PFE",
+    "PG",
+    "TLT",
+    "UNH",
+    "WMT",
+    "XOM"
+  ],
+  "rango_datos": [
+    "2017-01-03",
+    "2026-11-17"
+  ],
+  "rango_backtest": [
+    "2023-01-04",
+    "2026-11-17"
+  ],
+  "n_rebalanceos": 47,
+  "mejor_reg": {
+    "k": 200,
+    "weights": "uniform",
+    "RMSE_val": 0.09643717694354513
+  },
+  "mejor_clf": {
+    "k": 200,
+    "weights": "uniform",
+    "F1_val": 0.6165540540540541
+  },
+  "reg_metricas": {
+    "KNN": {
+      "MSE": 0.005489606089698532,
+      "RMSE": 0.07409187600336849,
+      "MAE": 0.05488890308265229
+    },
+    "Media histórica": {
+      "MSE": 0.005332496828314342,
+      "RMSE": 0.07302394695108134,
+      "MAE": 0.05418636840537337
+    },
+    "Cero (naive)": {
+      "MSE": 0.005559868418307042,
+      "RMSE": 0.07456452520003759,
+      "MAE": 0.0554864640877475
+    },
+    "R2_OOS_vs_media": -0.029462607563116583,
+    "n_obs": 3128
+  },
+  "clf_metricas": {
+    "confusion": [
+      [
+        73,
+        1203
+      ],
+      [
+        124,
+        1728
+      ]
+    ],
+    "accuracy": 0.5757672634271099,
+    "precision": 0.5895598771750256,
+    "recall": 0.9330453563714903,
+    "f1": 0.7225590633493624,
+    "baseline_accuracy": 0.592071611253197,
+    "baseline_f1": 0.7437751004016064,
+    "n_obs": 3128
+  },
+  "dm": {
+    "reg_vs_media": {
+      "dm_stat": 2.4960632710699695,
+      "p_value": 0.01376208893090225,
+      "T": 136,
+      "mean_diff": 0.0001571092613841909,
+      "texto": "Se rechaza H0 (p=0.014 < 0.05): la media histórica es estadísticamente más preciso."
+    },
+    "reg_vs_cero": {
+      "dm_stat": -0.63210160139762,
+      "p_value": 0.5283895199540587,
+      "T": 136,
+      "mean_diff": -7.026232860850979e-05,
+      "texto": "No se rechaza H0 (p=0.528 ≥ 0.05): no hay evidencia de que KNN y el pronóstico cero difieran en precisión predictiva."
+    },
+    "reg_vs_media_abs": {
+      "dm_stat": 2.3448549504781084,
+      "p_value": 0.020492221363571428,
+      "T": 136,
+      "mean_diff": 0.0007025346772789204,
+      "texto": "Se rechaza H0 (p=0.020 < 0.05): la media histórica es estadísticamente más preciso."
+    },
+    "clf_vs_mayoria": {
+      "dm_stat": 2.542066579080805,
+      "p_value": 0.012149223389558816,
+      "T": 136,
+      "mean_diff": 0.016304347826086956,
+      "texto": "Se rechaza H0 (p=0.012 < 0.05): la clase mayoritaria es estadísticamente más preciso."
+    }
+  },
+  "desempeno": {
+    "KNN Espacial": {
+      "ROI acumulado": 0.6855912489629545,
+      "Retorno anual": 0.1449529093989257,
+      "Volatilidad anual": 0.11871485449049547,
+      "Sharpe": 0.8695889689740448,
+      "Sortino": 1.2142475529399943,
+      "Max Drawdown": -0.19434921326432308,
+      "Calmar": 0.7458373870635826
+    },
+    "KNN Espacial + VolTarget": {
+      "ROI acumulado": 0.7037257956164495,
+      "Retorno anual": 0.14813383222344623,
+      "Volatilidad anual": 0.10394254791224597,
+      "Sharpe": 1.003982716586527,
+      "Sortino": 1.4267555656765916,
+      "Max Drawdown": -0.14823480153916935,
+      "Calmar": 0.9993188555273477
+    },
+    "KNN Predictivo": {
+      "ROI acumulado": 0.8713756927001355,
+      "Retorno anual": 0.1764141921214637,
+      "Volatilidad anual": 0.12062332735342082,
+      "Sharpe": 1.0821836439168397,
+      "Sortino": 1.6072340583752953,
+      "Max Drawdown": -0.14512359709031364,
+      "Calmar": 1.215613419585219
+    },
+    "Markowitz (máx. Sharpe)": {
+      "ROI acumulado": 1.3275462492716237,
+      "Retorno anual": 0.24486365218961015,
+      "Volatilidad anual": 0.14378736118415006,
+      "Sharpe": 1.3227613823184128,
+      "Sortino": 2.011505652951536,
+      "Max Drawdown": -0.15754787361659073,
+      "Calmar": 1.5542174360633487
+    },
+    "Equiponderada 1/N": {
+      "ROI acumulado": 1.1118710828878045,
+      "Retorno anual": 0.21387238224079796,
+      "Volatilidad anual": 0.11434734839035901,
+      "Sharpe": 1.4095963553580675,
+      "Sortino": 2.1015274468449427,
+      "Max Drawdown": -0.14027340542852706,
+      "Calmar": 1.5246823272553363
+    },
+    "SPY (buy & hold)": {
+      "ROI acumulado": 1.0133373633313618,
+      "Retorno anual": 0.1989282140798314,
+      "Volatilidad anual": 0.15078276313895356,
+      "Sharpe": 1.0185503828314062,
+      "Sortino": 1.4947632841202483,
+      "Max Drawdown": -0.18755237333914387,
+      "Calmar": 1.0606542084120527
+    }
+  },
+  "cartera_actual": {
+    "KNN Espacial": {
+      "AAPL": 0.082,
+      "AMZN": 0.0,
+      "BAC": 0.0,
+      "CAT": 0.0,
+      "CVX": 0.1128,
+      "EEM": 0.0,
+      "GLD": 0.0,
+      "GOOGL": 0.0,
+      "GS": 0.0,
+      "HD": 0.0,
+      "JNJ": 0.25,
+      "JPM": 0.0,
+      "KO": 0.25,
+      "LIN": 0.0877,
+      "MSFT": 0.0,
+      "NEE": 0.0,
+      "NVDA": 0.0,
+      "PFE": 0.0721,
+      "PG": 0.0697,
+      "TLT": 0.0,
+      "UNH": 0.0,
+      "WMT": 0.0,
+      "XOM": 0.0757
+    },
+    "KNN Predictivo": {
+      "AAPL": 0.1524,
+      "AMZN": 0.0,
+      "BAC": 0.1392,
+      "CAT": 0.0788,
+      "CVX": 0.0,
+      "EEM": 0.1338,
+      "GLD": 0.1405,
+      "GOOGL": 0.0,
+      "GS": 0.1091,
+      "HD": 0.0,
+      "JNJ": 0.0,
+      "JPM": 0.0,
+      "KO": 0.0,
+      "LIN": 0.0,
+      "MSFT": 0.0,
+      "NEE": 0.0,
+      "NVDA": 0.0772,
+      "PFE": 0.169,
+      "PG": 0.0,
+      "TLT": 0.0,
+      "UNH": 0.0,
+      "WMT": 0.0,
+      "XOM": 0.0
+    },
+    "Markowitz": {
+      "AAPL": 0.0869,
+      "AMZN": 0.0596,
+      "BAC": 0.0,
+      "CAT": 0.002,
+      "CVX": 0.1517,
+      "EEM": 0.0697,
+      "GLD": 0.0,
+      "GOOGL": 0.0,
+      "GS": 0.046,
+      "HD": 0.0,
+      "JNJ": 0.1634,
+      "JPM": 0.0,
+      "KO": 0.2061,
+      "LIN": 0.0703,
+      "MSFT": 0.0,
+      "NEE": 0.0,
+      "NVDA": 0.0,
+      "PFE": 0.0,
+      "PG": 0.0,
+      "TLT": 0.0,
+      "UNH": 0.0571,
+      "WMT": 0.0,
+      "XOM": 0.0872
+    }
+  },
+  "fecha_cartera_actual": "2026-11-17",
+  "config": {
+    "HORIZON": 21,
+    "STEP": 7,
+    "REBAL_EVERY": 3,
+    "N_SELECT": 8,
+    "MAX_WEIGHT": 0.25,
+    "LOOKBACK": 252,
+    "RF_ANNUAL": 0.04,
+    "TC_BPS": 10,
+    "VOL_TARGET": 0.1,
+    "VALID_START": "2022-01-01",
+    "VALID_END": "2022-12-31",
+    "TEST_START": "2023-01-01",
+    "FEATURES": [
+      "ret_5",
+      "ret_21",
+      "ret_63",
+      "vol_21",
+      "vol_63",
+      "dd_63"
+    ],
+    "K_GRID": [
+      5,
+      10,
+      20,
+      50,
+      100,
+      200
+    ],
+    "WEIGHTS_GRID": [
+      "uniform",
+      "distance"
+    ]
+  }
+}
